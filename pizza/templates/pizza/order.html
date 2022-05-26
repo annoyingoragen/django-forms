@@ -2,9 +2,17 @@
 <h2>
     {{note}}
 </h2>
-<form action="{% url 'order' %}" method="post">
+<form  action="{% url 'order' %}" method="post">
     {% csrf_token %}
    {{form}}
 
         <input type="submit" value="Order Pizza">
+</form>
+
+want more than one pizza?
+<form  action="{% url 'pizzas' %}" method="get">
+    {% csrf_token %}
+   {{mulform}}
+
+        <input type="submit" value="Get Pizza">
 </form>

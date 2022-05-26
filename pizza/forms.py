@@ -1,4 +1,5 @@
 from dataclasses import fields
+import numbers
 from django import forms
 from .models import Pizza,Size
 
@@ -18,4 +19,8 @@ class PizzaForm(forms.ModelForm):
         labels={
             'topping1':'Topping 1'
         }
-        widgets={'topping1':forms.Textarea}
+        # widgets={'topping1':forms.Textarea}
+
+
+class MultiplePizzaForm(forms.Form):
+    numbers=forms.IntegerField(min_value=2,max_value=6)
